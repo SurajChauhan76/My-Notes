@@ -1,0 +1,164 @@
+===============================
+Create git repo on Command line
+===============================
+
+git init
+
+git add README.md or filename or .(for all files)
+
+git commit -m "First Commit"
+
+git remote add origin HTTPS-url or SSH-url (for large files > 100MB)
+
+git push -u origin main
+
+
+
+To edit the commit message: git commit -ma "updated message"
+
+==========================
+Add All Modified(M) files:
+
+git add -u
+==========================
+
+=======================
+Add Untracked(U) files:
+
+git add .
+=======================
+# Note: git add . adds all untracked and modified files as well so first add modified ones then go for untracked.
+
+
+===================
+Undo Staged commits
+===================
+1. git reset --soft HEAD~1   #  “uncommit” but keep your changes in the working directory
+2. git reset HEAD~1	     # go back to the state before git add .
+3. git reset --hard HEAD~1   # completely revert to the repo’s previous state (like nothing was ever added/committed) /  delete all changes and cannot be 				recovered if there's no backup
+
+
+======================
+Delete the .git Folder
+======================
+1. Run this command inside your project directory:
+
+rm -rf .git
+
+2. On Windows (PowerShell):
+
+Remove-Item -Recurse -Force .git
+
+3. On Windows (Command Prompt):
+
+rmdir /s /q .git
+
+4. Verify
+
+After deletion, check:
+
+ls -a
+
+You should no longer see a .git folder.
+
+5. Confirm Git Is Gone
+
+Run:
+
+git status
+
+========================
+Merging via command line
+========================
+Step 1 Clone the repository or update your local repository with the latest changes.
+
+git pull origin main
+
+
+Step 2 Switch to the base branch of the pull request.
+
+git checkout main
+
+
+Step 3 Merge the head branch into the base branch.
+
+git merge SurajChauhan76-patch-1
+
+
+Step 4 Push the changes.
+
+git push -u origin main
+
+----------------------------------------------------
+
+
+
+24.02.2026 (Shiv Kumar)
+
+---
+
+
+
+Git: version control system. Internet not required. 100% open source.
+
+Developed by Linux Torudd (using bit rap)
+
+
+
+History:
+
+1. Copy paste method
+2. local version control system RCS
+3. centralized version  control system
+
+
+
+Then came:
+
+4. Distributed version control system
+
+
+
+GitHub: Management software, cloud storage server to store repository. Requires internet. open source but some features requires premium purchase.
+
+Types:
+
+1. public
+2. private
+
+# Competitor: Bit Bucket
+
+=========================
+Check username and email:
+=========================
+1. git config --global user.name
+2. git config --global user.email
+3. git config --list
+
+==============================
+Set global username and email:
+==============================
+1. git config --global user.name  "GitHub username"
+2. git config --global user.email "provided-email-on-GitHub"
+
+
+Git Commands:
+
+1. Repository: Working directory
+2. Commit
+3. Branch: For parallelism
+4. Merge
+
+Three stages of git:
+1. Working directory
+2. Staging
+3. Git
+
+GitHub Concepts:
+1. push
+2. pull: total remote repo downloaded to local system and the content on the local repo will be replaced with the remote one.
+3. fetch: here the remote code will be added to the local repo codes instead of replacing the local repo code with remote one.
+4. commit
+5. fork
+6. PR
+7. Issue
